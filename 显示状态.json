@@ -1,0 +1,22 @@
+{
+  "rankNum": localStorage.getItem(ID
+  +
+  'Rank'
+  ),
+  "Point": localStorage.getItem(ID
+  +
+  'Point'
+  ),
+  "votes": localStorage.getItem(ID
+  +
+  'Votes'
+  ),
+  "Point_f": localStorage.getItem(ID
+  +
+  'Point_f'
+  ),
+  "Votes_f": localStorage.getItem(ID
+  +
+  'Votes_f'
+  )
+}
