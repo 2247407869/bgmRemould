@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://www.cnblogs.com/liangyun/archive/2018/12/24/10168398.html
+// @match        https://bgm.tv/game/browser?sort=rank
 // @grant        none
 // ==/UserScript==
 
@@ -13,10 +13,12 @@
 
     // Your code here...
     var list = document.getElementById('browserItemList');
+    console.log(list.childNodes.length)
     list.childNodes.forEach(n => {
-        if (n.getElementsByClassName('collectModify')) {
+        console.log(n.getElementsByClassName('collectModify'))
+        if (n.getElementsByClassName('collectModify').length!==0) {
+            console.log(n)
             n.remove();
         }
     });
-    // scrollTo(0,0);
 })();
