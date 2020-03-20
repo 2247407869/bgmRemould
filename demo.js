@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         bangumiHider
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
-// @match        https://bgm.tv/game/browser?sort=rank
+// @version      0.2
+// @description  简化显示bangumi排行榜里收藏过的动画、游戏
+// @author       雨夜
+// @match        https://bgm.tv/*/browser*?sort=rank*
 // @grant        none
 // ==/UserScript==
 
@@ -13,12 +13,13 @@
 
     // Your code here...
     var list = document.getElementById('browserItemList');
-    console.log(list.childNodes.length)
     list.childNodes.forEach(n => {
-        console.log(n.getElementsByClassName('collectModify'))
         if (n.getElementsByClassName('collectModify').length!==0) {
-            console.log(n)
-            n.remove();
+            n.getElementsByClassName('subjectCover')[0].style.display="none";
+            n.getElementsByClassName('collectBlock')[0].style.display="none";
+            n.getElementsByClassName('info tip')[0].style.display="none";
+            n.getElementsByClassName('rateInfo')[0].style.display="none";
+            // n.style.display="none";
         }
     });
 })();
